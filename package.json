@@ -1,0 +1,41 @@
+{
+  "name": "semver-addons",
+  "version": "0.0.0-development",
+  "description": "Extra functionality for the SemVer package",
+  "directories": {
+    "src": "src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/keithamus/semver-addons"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "test": "mocha"
+  },
+  "config": {
+    "ghooks": {
+      "commit-msg": "validate-commit-msg",
+      "pre-commit": "npm t"
+    }
+  },
+  "eslintConfig": {
+    "extends": [
+      "strict/es5"
+    ]
+  },
+  "dependencies": {
+    "semver": "^5.1.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "eslint": "^2.4.0",
+    "eslint-config-strict": "^8.5.0",
+    "ghooks": "^1.0.3",
+    "mocha": "^2.4.5",
+    "semantic-release": "^4.3.5",
+    "travis-after-all": "^1.4.4",
+    "validate-commit-msg": "^2.4.0"
+  }
+}
